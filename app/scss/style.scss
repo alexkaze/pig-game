@@ -1,0 +1,142 @@
+@import './fonts';
+@import './resets';
+@import './variables';
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-weight: weight(light);
+  letter-spacing: 0.4rem;
+  color: rgb(15, 15, 15);
+  text-transform: uppercase;
+}
+
+.page {
+  @include flex(center, center, row);
+  height: 100vh;
+
+  background: linear-gradient(
+    to right,
+    rgba(185, 110, 0, 0.7),
+    rgba(155, 0, 0, 0.7)
+  );
+}
+
+.game-area {
+  display: flex;
+  width: 100%;
+  max-width: 100rem;
+  height: 100%;
+  max-height: 60rem;
+
+  background-color: gray(0.3);
+  box-shadow: shadows(5rem);
+  border-radius: 1rem;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.player {
+  flex: 1 1 50%;
+  @include flex(space-evenly, center, column);
+  opacity: 0.7;
+  transition: background-color 0.8s ease;
+
+  &__number {
+    font-weight: weight(light);
+    color: #000;
+  }
+
+  &__score {
+    font-weight: weight(light);
+    font-size: 10rem;
+    color: rgb(180, 102, 0);
+  }
+
+  &__dice {
+    @include flex(space-evenly, center, column);
+    padding: 1.5rem 4rem;
+
+    background-color: #c3654cc2;
+    border-radius: 1rem;
+
+    &-text {
+      margin-bottom: 1rem;
+    }
+
+    &-points {
+      font-size: 4rem;
+    }
+  }
+
+  &--active {
+    background-color: gray(0.5);
+    opacity: 1;
+
+    & .player__number {
+      font-weight: weight(bold);
+    }
+  }
+
+  &--win {
+    background-color: $win-color;
+  }
+}
+
+.control {
+  position: absolute;
+
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  height: 100%;
+
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.dice {
+  width: 12rem;
+  box-shadow: shadows(1rem);
+
+  &-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: weight(bold);
+  letter-spacing: inherit;
+  color: inherit;
+  text-transform: inherit;
+  border: none;
+  cursor: pointer;
+
+  padding: 1rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+  box-shadow: shadows(1rem);
+  backdrop-filter: blur(0.2rem);
+  transition: transform 0.2s ease;
+
+  &:active {
+    transform: translateY(0.3rem);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.hidden {
+  display: none;
+}

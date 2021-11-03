@@ -1,0 +1,24 @@
+$font-weight: (
+  'light': 300,
+  'bold': 600,
+);
+$win-color: rgba(33, 168, 33, 0.6);
+
+@function weight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
+@function gray($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
+
+@function shadows($size) {
+  @return 0 0 $size rgba(0, 0, 0, 0.3);
+}
+
+@mixin flex($jc, $ai, $dir) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $dir;
+}
