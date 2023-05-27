@@ -6,3 +6,5 @@
 - If the player rolls the dice with one point he will lose the current score and skip his turn.
 - The player who achieves at least 100 points is the winner.
 - Button 'New Game' resetes the whole game.
+
+You can try https://pig-game-prv.netlify.app
