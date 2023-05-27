@@ -8,3 +8,6 @@
 - Button 'New Game' resetes the whole game.
 
 You can try https://pig-game-prv.netlify.app
+
+> **Note**  
+> The app is not adapted for the mobile version.
